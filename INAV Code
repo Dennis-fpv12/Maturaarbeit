@@ -1,1 +1,264 @@
-Test File
+# version
+# INAV/TMOTORF7V2 7.1.2 Jun 1 2024 / 00:57:54 (4e1e59eb)
+# GCC-10.3.1 20210824 (release)
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults noreboot
+
+# resources
+
+# Timer overrides
+
+# Outputs [servo]
+
+# safehome
+
+# Fixed Wing Approach
+
+# features
+feature GPS
+feature PWM_OUTPUT_ENABLE
+
+# beeper
+
+# blackbox
+blackbox -NAV_ACC
+blackbox NAV_POS
+blackbox NAV_PID
+blackbox MAG
+blackbox ACC
+blackbox ATTI
+blackbox RC_DATA
+blackbox RC_COMMAND
+blackbox MOTORS
+blackbox -GYRO_RAW
+blackbox -PEAKS_R
+blackbox -PEAKS_P
+blackbox -PEAKS_Y
+
+# Receiver: Channel map
+map RETA
+
+# Ports
+serial 0 2048 115200 115200 0 115200
+serial 2 2 115200 115200 0 115200
+serial 3 1 115200 115200 0 115200
+serial 4 0 19200 115200 0 115200
+
+# LEDs
+
+# LED color
+
+# LED mode_color
+
+# Modes [aux]
+aux 0 0 0 1700 2100
+aux 1 1 2 1300 2100
+aux 2 11 2 1700 2100
+aux 3 10 3 1700 2100
+aux 4 3 2 1700 2100
+aux 5 5 2 1700 2100
+aux 6 33 2 1700 2100
+aux 7 52 6 1700 2100
+aux 8 13 7 1700 2100
+aux 9 30 5 1700 2100
+
+# Adjustments [adjrange]
+
+# Receiver rxrange
+
+# temp_sensor
+
+# Mission Control Waypoints [wp]
+#wp 0 invalid
+
+# OSD [osd_layout]
+osd_layout 0 0 23 10 V
+osd_layout 0 1 3 10 V
+osd_layout 0 5 22 3 H
+osd_layout 0 6 3 2 V
+osd_layout 0 7 13 8 H
+osd_layout 0 9 13 7 V
+osd_layout 0 11 14 2 H
+osd_layout 0 12 14 3 V
+osd_layout 0 13 8 3 V
+osd_layout 0 14 11 2 V
+osd_layout 0 15 21 5 V
+osd_layout 0 20 11 11 V
+osd_layout 0 21 11 10 V
+osd_layout 0 22 15 9 V
+osd_layout 0 23 18 2 V
+osd_layout 0 24 7 7 V
+osd_layout 0 28 23 11 H
+osd_layout 0 30 2 12 H
+osd_layout 0 32 3 11 V
+osd_layout 0 34 11 5 V
+osd_layout 0 110 23 11 V
+osd_layout 0 120 3 5 V
+
+# Programming: logic
+
+# Programming: global variables
+
+# Programming: PID controllers
+
+# OSD: custom elements
+
+# master
+set looptime = 500
+set gyro_main_lpf_hz = 110
+set gyro_main_lpf_type = PT1
+set gyro_dyn_lpf_min_hz = 85
+set gyro_dyn_lpf_max_hz = 300
+set gyro_dyn_lpf_curve_expo = 3
+set dynamic_gyro_notch_q = 250
+set dynamic_gyro_notch_min_hz = 60
+set setpoint_kalman_q = 200
+set gyro_zero_y = 4
+set gyro_zero_z = -2
+set ins_gravity_cmss = 980.354
+set acc_hardware = ICM42605
+set acczero_x = -6
+set acczero_y = -2
+set acczero_z = 17
+set accgain_x = 4098
+set accgain_y = 4088
+set accgain_z = 4097
+set rangefinder_hardware = MSP
+set opflow_hardware = MSP
+set opflow_scale = 5.039
+set align_mag = CW90FLIP
+set mag_hardware = QMC5883
+set magzero_x = 256
+set magzero_y = 176
+set magzero_z = -50
+set maggain_x = 1326
+set maggain_y = 1436
+set maggain_z = 1470
+set baro_hardware = BMP280
+set serialrx_provider = CRSF
+set blackbox_rate_denom = 2
+set motor_pwm_protocol = DSHOT600
+set failsafe_procedure = RTH
+set applied_defaults = 2
+set gps_sbas_mode = EGNOS
+set gps_ublox_use_galileo = ON
+set gps_ublox_use_beidou = ON
+set gps_ublox_use_glonass = ON
+set deadband = 2
+set yaw_deadband = 2
+set airmode_type = THROTTLE_THRESHOLD
+set inav_allow_dead_reckoning = ON
+set nav_auto_speed = 400
+set nav_manual_climb_rate = 250
+set nav_max_terrain_follow_alt = 200
+set osd_alt_alarm = 500
+set debug_mode = FLOW_RAW
+set vtx_band = 4
+set vtx_channel = 7
+set vtx_power = 4
+set vtx_low_power_disarm = ON
+
+# mixer_profile
+mixer_profile 1
+
+set model_preview_type = 3
+
+# Mixer: motor mixer
+
+mmix reset
+
+mmix 0 1.000 -1.000 1.000 -1.000
+mmix 1 1.000 -1.000 -1.000 1.000
+mmix 2 1.000 1.000 1.000 1.000
+mmix 3 1.000 1.000 -1.000 -1.000
+
+# Mixer: servo mixer
+
+# mixer_profile
+mixer_profile 2
+
+
+# Mixer: motor mixer
+
+# Mixer: servo mixer
+
+# profile
+profile 1
+
+set mc_i_pitch = 90
+set mc_d_pitch = 27
+set mc_p_roll = 36
+set mc_i_roll = 80
+set mc_d_roll = 25
+set mc_p_yaw = 35
+set mc_i_yaw = 80
+set dterm_lpf_type = PT3
+set d_boost_min = 1.000
+set d_boost_max = 1.000
+set antigravity_gain = 2.000
+set antigravity_accelerator = 5.000
+set smith_predictor_delay = 1.500
+set tpa_rate = 20
+set tpa_breakpoint = 1200
+set rc_expo = 75
+set rc_yaw_expo = 75
+set roll_rate = 70
+set pitch_rate = 70
+set yaw_rate = 60
+
+# profile
+profile 2
+
+set max_angle_inclination_rll = 450
+set max_angle_inclination_pit = 450
+set dterm_lpf_hz = 80
+set heading_hold_rate_limit = 30
+set nav_mc_vel_z_p = 150
+set nav_mc_vel_z_i = 250
+set nav_mc_vel_z_d = 25
+set nav_mc_pos_xy_p = 80
+set nav_mc_vel_xy_p = 50
+set nav_mc_vel_xy_i = 40
+set nav_mc_vel_xy_d = 60
+set rc_expo = 75
+set rc_yaw_expo = 75
+set roll_rate = 40
+set pitch_rate = 40
+set yaw_rate = 40
+set ez_filter_hz = 100
+set ez_axis_ratio = 100
+set ez_response = 80
+set ez_damping = 140
+set ez_aggressiveness = 90
+set ez_rate = 70
+set ez_expo = 50
+
+# profile
+profile 3
+
+
+# battery_profile
+battery_profile 1
+
+set throttle_idle = 5.000
+set nav_mc_hover_thr = 1260
+
+# battery_profile
+battery_profile 2
+
+
+# battery_profile
+battery_profile 3
+
+
+# restore original profile selection
+mixer_profile 1
+profile 2
+battery_profile 1
+
+# save configuration
+save
